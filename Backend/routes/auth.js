@@ -34,6 +34,7 @@ router.get(
     passport.authenticate("google", {
         successRedirect: process.env.CLIENT_URL,
         failureRedirect: "/login/failed",
+        session: true
     })
 );
 
