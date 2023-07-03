@@ -14,11 +14,6 @@ const port = 5000 || process.env.PORT;
 const connectDB = require('./config/db');
 connectDB();
 
-
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 app.use(
     cookieSession({
         name: 'session',
@@ -26,6 +21,11 @@ app.use(
         maxAge: 24 * 60 * 60 * 1000
     })
 );
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 
 
 app.use(cors({
