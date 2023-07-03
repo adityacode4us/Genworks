@@ -39,6 +39,7 @@ purpose is to determine which data of the user object should be stored in the se
 the `serializeUser` method is simply passing the entire user object to the `done` callback function,
 which signals that the serialization process is complete. */
 passport.serializeUser((user, done) => {
+    console.log("user in serialize is",user);
     done(null, user);
 });
 
@@ -48,6 +49,7 @@ the server and its purpose is to retrieve the user object from the session and m
 the request object. In this case, the `deserializeUser` method is simply passing the entire user
 object to the `done` callback function, which signals that the deserialization process is complete. */
 passport.deserializeUser((user, done) => {
+     console.log("user in deserialize is",user);
     done(null, user);
 });
 
