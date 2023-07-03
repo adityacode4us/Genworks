@@ -6,7 +6,7 @@ require('dotenv').config();
 router.get("/login/success", async (req, res) => {
     // const email = await passportEmail.getUserProfile();
     // console.log(email);
-    console.log("req is",req);
+    console.log("req user  is",req.user);
     if (req.user) {
         res.status(200).json({
             error: false,
